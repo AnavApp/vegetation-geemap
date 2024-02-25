@@ -2,7 +2,8 @@ import streamlit as st
 import geemap.foliumap as geemap
 import ee
 
-
+ee.Authenticate()
+ee.Initialize(project='vegetation-2023-408901')
 st.set_page_config(layout="wide")
 
 # Customize the sidebar
