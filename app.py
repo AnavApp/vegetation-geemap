@@ -1,9 +1,6 @@
 import streamlit as st
 import geemap.foliumap as geemap
-import ee
 
-ee.Authenticate()
-ee.Initialize(project='vegetation-2023-408901')
 st.set_page_config(layout="wide")
 
 # Customize the sidebar
@@ -40,14 +37,3 @@ m = geemap.Map()
 m.add_basemap("OpenTopoMap")
 m.add_basemap('SATELLITE')
 m.to_streamlit(height=500)
-
-SA_C1_F1 = ee.Geometry.Polygon([[
-    [-122.30873933302412,39.733553025787074],
-    [-122.29966059951893,39.733490246690515],
-    [-122.29963899613189,39.73739881238475],
-    [-122.30867708267466,39.737436562645634],
-    [-122.30873933302412,39.733553025787074],
-  ]])
-
-m.add_layer(SA_C1_F1, {'color': 'red'}, 'SA_C1_F1')
-m.centerObject(SA_C1_F1,14)
