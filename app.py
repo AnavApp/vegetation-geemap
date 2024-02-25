@@ -39,4 +39,5 @@ m.add_basemap('SATELLITE')
 m.to_streamlit(height=500)
 
 feature = m.draw_last_feature
-roi = feature.geometry()
+if not(type(feature)==NoneType):
+    roi = feature.geometry()
