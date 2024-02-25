@@ -37,3 +37,6 @@ m = geemap.Map()
 m.add_basemap("OpenTopoMap")
 m.add_basemap('SATELLITE')
 m.to_streamlit(height=500)
+
+feature = m.draw_last_feature
+roi = feature.geometry()
