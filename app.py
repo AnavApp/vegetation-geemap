@@ -21,7 +21,7 @@ st.markdown(
     This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and [geemap](https://geemap.org). It is an open-source project and you are very welcome to contribute to the [GitHub repository](https://github.com/giswqs/geemap-apps).
     """
 )
-
+st.balloons()
 st.header("Instructions")
 
 markdown = """
@@ -35,4 +35,5 @@ st.markdown(markdown)
 
 m = geemap.Map()
 m.add_basemap("OpenTopoMap")
+m.add_basemap('SATELLITE')
 m.to_streamlit(height=500)
